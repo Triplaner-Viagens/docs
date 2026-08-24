@@ -1,0 +1,8 @@
+{
+  "label": "Produto",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "A visão detalhada da solução, suas características e as personas atendidas."
+  }
+}

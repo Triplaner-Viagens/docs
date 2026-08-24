@@ -11,32 +11,32 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Roteiro completo no seu ritmo',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Logística, hospedagem e pontos de interesse reunidos em um único
+        roteiro, montado a partir do que cada viajante realmente quer fazer.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Segurança como prioridade',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Avaliação de segurança das regiões visitadas integrada ao planejamento,
+        para decidir por onde passar com mais tranquilidade.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Assistente de viagem',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Um chatbot que refina o roteiro em conversa, ajustando paradas, tempo e
+        preferências sem precisar recomeçar do zero.
       </>
     ),
   },

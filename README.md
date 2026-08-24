@@ -1,22 +1,22 @@
-# Website
+# Triplaner - Documentação
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Documentação oficial do Triplaner, uma plataforma web que monta roteiros de viagem completos a partir dos interesses reais de cada viajante.
 
-## Installation
+O site é construído com [Docusaurus](https://docusaurus.io/) e publicado no GitHub Pages.
+
+## Instalação
 
 ```bash
 npm install
 ```
 
-**Note**: feel free to use the package manager of your choice.
-
-## Local Development
+## Ambiente local
 
 ```bash
-npm run start
+npm start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+O comando inicia um servidor local e abre o navegador. A maioria das alterações é refletida sem reiniciar o servidor.
 
 ## Build
 
@@ -24,20 +24,27 @@ This command starts a local development server and opens up a browser window. Mo
 npm run build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+Gera o conteúdo estático no diretório `build`, pronto para ser servido por qualquer hospedagem de arquivos estáticos.
 
-## Deployment
+## Estrutura da documentação
 
-Using SSH:
+O conteúdo fica em `docs/` e está organizado em:
 
-```bash
-USE_SSH=true npm run deploy
-```
+- **Visão Geral**: problema, oportunidade e objetivos.
+- **Produto**: visão da solução, características e personas.
+- **Arquitetura**: visão arquitetural, stack tecnológico e estrutura do repositório.
+- **Engenharia**: metodologia de trabalho.
+- **Equipe**: colaboradores e repositórios.
 
-Not using SSH:
+## Repositórios
 
-```bash
-GIT_USER=<Your GitHub username> npm run deploy
-```
+Todos os repositórios ficam sob a organização [Triplaner-Viagens](https://github.com/Triplaner-Viagens):
 
-If you are using GitHub Pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+- [frontend](https://github.com/Triplaner-Viagens/frontend)
+- [backend](https://github.com/Triplaner-Viagens/backend)
+- [docs](https://github.com/Triplaner-Viagens/docs)
+
+## Equipe
+
+- Diogo Oliveira - [@Diogo-Olivv](https://github.com/Diogo-Olivv)
+- Alexandre Machado - [@alxmrf](https://github.com/alxmrf)

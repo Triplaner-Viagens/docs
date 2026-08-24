@@ -1,0 +1,8 @@
+{
+  "label": "Arquitetura",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "A visão arquitetural, o stack tecnológico e a estrutura do repositório."
+  }
+}

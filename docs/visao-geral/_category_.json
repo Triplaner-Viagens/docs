@@ -1,0 +1,8 @@
+{
+  "label": "Visão Geral",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "O contexto de negócio, o problema que o Triplaner resolve e os objetivos do produto."
+  }
+}
