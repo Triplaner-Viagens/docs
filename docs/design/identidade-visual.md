@@ -24,12 +24,12 @@ export const Sw = ({ c }) => (
 
 ## Direção escolhida: Confiança
 
-A direção adotada é a "Confiança", uma base de azul na linhagem de Booking e Hoteis.com, com um acento coral quente. A escolha atende dois pontos do produto:
+A direção adotada é a "Confiança", uma base de azul na linhagem de Booking e Hoteis.com, com um par de acentos quentes do Airbnb: o vermelho Rausch e o vinho. A escolha atende dois pontos do produto:
 
 - O azul comunica segurança e credibilidade, o que conversa direto com o módulo de segurança e com a persona de viajantes familiares.
 - A familiaridade com apps de viagem consolidados reduz a curva de aprendizado, como pede a visão de produto.
 
-O acento coral entra apenas em ações principais e destaques, para dar calor e direcionar o olhar sem poluir.
+O vermelho do Airbnb entra como cor de marca em ações de conversão e destaques, e o vinho o acompanha em gradientes e elementos gráficos, dando calor e direcionando o olhar sem poluir.
 
 ## Referências de mercado
 
@@ -38,7 +38,7 @@ O estudo de players guiou tanto cor quanto posição de componentes.
 | Player | O que aproveitamos |
 | --- | --- |
 | Booking, Hoteis.com | Azul de confiança, filtros laterais, cards de resultado densos e escaneáveis |
-| Airbnb | Uso econômico de um único acento, foto grande, respiro e hierarquia limpa |
+| Airbnb | Vermelho Rausch como cor de marca, foto grande, respiro e hierarquia limpa |
 | Trivago, Kayak | Barra de busca dominante no topo e comparação lado a lado |
 
 O princípio geral: layout familiar de app de viagem, cor sóbria e um acento usado com parcimônia.
@@ -58,7 +58,9 @@ As cores são organizadas por papel, não por matiz. Cada cor tem uma função, 
 | border | Bordas e divisórias | <Sw c="#E3E8EF"/> `#E3E8EF` |
 | primary | Ação principal, links, estado ativo | <Sw c="#1668E3"/> `#1668E3` |
 | primary-foreground | Texto sobre primary | <Sw c="#FFFFFF"/> `#FFFFFF` |
-| cta | Destaque quente, CTA de conversão | <Sw c="#FF7A45"/> `#FF7A45` |
+| cta | Cor de marca, CTA de conversão | <Sw c="#FF385C"/> `#FF385C` |
+| cta-foreground | Texto sobre cta | <Sw c="#FFFFFF"/> `#FFFFFF` |
+| wine | Acento em gradientes e destaques gráficos | <Sw c="#92174D"/> `#92174D` |
 | success | Segurança, confirmação, avaliação positiva | <Sw c="#12B76A"/> `#12B76A` |
 | warning | Atenção, área a evitar com ressalva | <Sw c="#F79009"/> `#F79009` |
 | destructive | Erro, ação irreversível | <Sw c="#E5484D"/> `#E5484D` |
@@ -75,14 +77,16 @@ O dark mode não é opcional na tendência atual e vem quase de graça com os to
 | muted-foreground | Texto secundário | <Sw c="#9AA7BD"/> `#9AA7BD` |
 | border | Bordas e divisórias | <Sw c="#22304A"/> `#22304A` |
 | primary | Ação principal | <Sw c="#4C8DFF"/> `#4C8DFF` |
-| cta | Destaque quente | <Sw c="#FF8A5C"/> `#FF8A5C` |
+| cta | Cor de marca, CTA de conversão | <Sw c="#FF5A76"/> `#FF5A76` |
+| wine | Acento em gradientes | <Sw c="#C65C8A"/> `#C65C8A` |
 | success | Segurança, confirmação | <Sw c="#3CCB7F"/> `#3CCB7F` |
 
 ### Regras de uso da cor
 
 - O azul é o token `primary`, usado em toda ação principal, link e estado ativo.
-- O coral é um token próprio, `cta`, reservado ao destaque de conversão. Ele não é o `accent` do shadcn, que segue neutro e serve apenas a estados sutis como hover de menu.
-- O acento coral aparece em no máximo um elemento por tela em geral, para não competir com o azul de ação.
+- O vermelho do Airbnb é um token próprio, `cta`, reservado ao destaque de conversão e à identidade da marca. Ele não é o `accent` do shadcn, que segue neutro e serve apenas a estados sutis como hover de menu.
+- O vinho é o token `wine`, usado junto ao `cta` em gradientes e elementos gráficos, como o medalhão da página 404. Não é cor de texto ou de ação isolada.
+- O acento de marca aparece em no máximo um elemento por tela em geral, para não competir com o azul de ação.
 - Cor nunca é o único meio de transmitir informação. Segurança de um local, por exemplo, usa cor mais ícone e rótulo, atendendo à acessibilidade.
 - Contraste segue a régua do WCAG descrita na seção de acessibilidade.
 
@@ -118,7 +122,8 @@ Os tokens vivem no `globals.css` do frontend. O shadcn/ui organiza o tema do Tai
   --background: oklch(0.979 0.003 264.5); /* #F7F8FA */
   --foreground: oklch(0.264 0.068 255.3); /* #0B2545 */
   --primary: oklch(0.546 0.202 259.6); /* #1668E3 */
-  --cta: oklch(0.727 0.176 41.2); /* #FF7A45 */
+  --cta: oklch(0.658 0.231 17.1); /* #FF385C */
+  --wine: oklch(0.438 0.161 0.8); /* #92174D */
   --success: oklch(0.686 0.167 154.9); /* #12B76A */
   --radius: 0.75rem;
 }
@@ -126,6 +131,7 @@ Os tokens vivem no `globals.css` do frontend. O shadcn/ui organiza o tema do Tai
 @theme inline {
   --color-primary: var(--primary);
   --color-cta: var(--cta);
+  --color-wine: var(--wine);
   --color-success: var(--success);
 }
 ```
