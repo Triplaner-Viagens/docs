@@ -155,4 +155,18 @@ You have to call mermaid.initialize.`)}isLinkData(e){return null!==e&&"object"==
     text-align: center;
   }
   ${(0,i.o)()}
-`,"getStyles"),T=(0,p.K)(({defaultLayout:e,styles:t=D}={})=>({parser:E,get db(){return new f},renderer:y,styles:t,init:(0,p.K)(t=>{t.flowchart||(t.flowchart={});let s=(0,h.TM)().layout??e??t.layout;s&&(0,h.XV)({layout:s}),t.flowchart.arrowMarkerAbsolute=t.arrowMarkerAbsolute,(0,h.XV)({flowchart:{arrowMarkerAbsolute:t.arrowMarkerAbsolute}})},"init")}),"createFlowDiagram"),x=T()}}]);
+`,"getStyles"),T=(0,p.K)(({defaultLayout:e,styles:t=D}={})=>({parser:E,get db(){return new f},renderer:y,styles:t,init:(0,p.K)(t=>{t.flowchart||(t.flowchart={});let s=(0,h.TM)().layout??e??t.layout;s&&(0,h.XV)({layout:s}),t.flowchart.arrowMarkerAbsolute=t.arrowMarkerAbsolute,(0,h.XV)({flowchart:{arrowMarkerAbsolute:t.arrowMarkerAbsolute}})},"init")}),"createFlowDiagram"),x=T()},4918(e,t,s){s.d(t,{o:()=>i});var i=(0,s(6827).K)(()=>`
+  /* Font Awesome icon styling - consolidated */
+  .label-icon {
+    display: inline-block;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+  }
+  
+  .node .label-icon path {
+    fill: currentColor;
+    stroke: revert;
+    stroke-width: revert;
+  }
+`,"getIconStyles")}}]);
