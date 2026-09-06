@@ -57,3 +57,13 @@ Diretrizes:
 - Respeitar a preferência do sistema. Quando `prefers-reduced-motion` estiver ativo, as animações não essenciais são desligadas. Isso é também um requisito de acessibilidade.
 
 Para microinterações simples, a transição do próprio Tailwind resolve. Para transições de layout mais ricas, como reordenar pontos do roteiro, será avaliada uma biblioteca de animação dedicada. Qualquer dependência nova passa antes por checagem de vulnerabilidades e aprovação, conforme as regras do projeto.
+
+## Smooth scroll com Lenis
+
+A rolagem suave da aplicação usa a biblioteca **Lenis**, da Darkroom Engineering. A escolha se justifica por três pontos:
+
+- É leve, performática e estável, e sua rolagem suave dá uma sensação mais polida de navegação, alinhada às referências de apps de viagem.
+- Tem integração pronta com React, o que mantém o setup simples no Next.
+- Está em manutenção saudável e sem vulnerabilidades conhecidas na versão adotada, o que atende à regra de segurança do projeto.
+
+O ponto de atenção é acessibilidade. Rolagem suave forçada pode incomodar quem tem sensibilidade a movimento. Por isso o Lenis é envolvido em um provider que verifica `prefers-reduced-motion`. Quando o usuário pede menos movimento, a rolagem suave é desligada e a página volta ao comportamento nativo do navegador. Assim, o efeito soma polimento sem ferir o requisito de acessibilidade.

@@ -7,6 +7,21 @@ title: Identidade Visual
 
 Esta seção define a base visual do Triplaner: a direção da marca, a paleta de cores, a tipografia, os tokens de design e os padrões de layout. A meta declarada na visão de produto é um visual leve e familiar, inspirado em players consolidados de viagem, com curva de aprendizado quase nula.
 
+export const Sw = ({ c }) => (
+  <span
+    style={{
+      display: "inline-block",
+      width: 14,
+      height: 14,
+      borderRadius: 3,
+      marginRight: 6,
+      verticalAlign: "-2px",
+      border: "1px solid #cbd5e1",
+      background: c,
+    }}
+  />
+);
+
 ## Direção escolhida: Confiança
 
 A direção adotada é a "Confiança", uma base de azul na linhagem de Booking e Hoteis.com, com um acento coral quente. A escolha atende dois pontos do produto:
@@ -34,37 +49,39 @@ As cores são organizadas por papel, não por matiz. Cada cor tem uma função, 
 
 ### Tema claro
 
-| Token | Papel | Hex |
+| Token | Papel | Cor |
 | --- | --- | --- |
-| background | Fundo da página | `#F7F8FA` |
-| surface | Fundo de card e superfícies elevadas | `#FFFFFF` |
-| foreground | Texto principal | `#0B2545` |
-| muted-foreground | Texto secundário | `#5A6B85` |
-| border | Bordas e divisórias | `#E3E8EF` |
-| primary | Ação principal, links, estado ativo | `#1668E3` |
-| primary-foreground | Texto sobre primary | `#FFFFFF` |
-| accent | Destaque quente, CTA de conversão | `#FF7A45` |
-| success | Segurança, confirmação, avaliação positiva | `#12B76A` |
-| warning | Atenção, área a evitar com ressalva | `#F79009` |
-| destructive | Erro, ação irreversível | `#E5484D` |
+| background | Fundo da página | <Sw c="#F7F8FA"/> `#F7F8FA` |
+| surface | Fundo de card e superfícies elevadas | <Sw c="#FFFFFF"/> `#FFFFFF` |
+| foreground | Texto principal | <Sw c="#0B2545"/> `#0B2545` |
+| muted-foreground | Texto secundário | <Sw c="#5A6B85"/> `#5A6B85` |
+| border | Bordas e divisórias | <Sw c="#E3E8EF"/> `#E3E8EF` |
+| primary | Ação principal, links, estado ativo | <Sw c="#1668E3"/> `#1668E3` |
+| primary-foreground | Texto sobre primary | <Sw c="#FFFFFF"/> `#FFFFFF` |
+| cta | Destaque quente, CTA de conversão | <Sw c="#FF7A45"/> `#FF7A45` |
+| success | Segurança, confirmação, avaliação positiva | <Sw c="#12B76A"/> `#12B76A` |
+| warning | Atenção, área a evitar com ressalva | <Sw c="#F79009"/> `#F79009` |
+| destructive | Erro, ação irreversível | <Sw c="#E5484D"/> `#E5484D` |
 
 ### Tema escuro
 
 O dark mode não é opcional na tendência atual e vem quase de graça com os tokens. As cores de fundo escurecem e as cores de ação clareiam para manter contraste.
 
-| Token | Papel | Hex |
+| Token | Papel | Cor |
 | --- | --- | --- |
-| background | Fundo da página | `#0B1220` |
-| surface | Fundo de card | `#121A2A` |
-| foreground | Texto principal | `#E6ECF5` |
-| muted-foreground | Texto secundário | `#9AA7BD` |
-| border | Bordas e divisórias | `#22304A` |
-| primary | Ação principal | `#4C8DFF` |
-| accent | Destaque quente | `#FF8A5C` |
-| success | Segurança, confirmação | `#3CCB7F` |
+| background | Fundo da página | <Sw c="#0B1220"/> `#0B1220` |
+| surface | Fundo de card | <Sw c="#121A2A"/> `#121A2A` |
+| foreground | Texto principal | <Sw c="#E6ECF5"/> `#E6ECF5` |
+| muted-foreground | Texto secundário | <Sw c="#9AA7BD"/> `#9AA7BD` |
+| border | Bordas e divisórias | <Sw c="#22304A"/> `#22304A` |
+| primary | Ação principal | <Sw c="#4C8DFF"/> `#4C8DFF` |
+| cta | Destaque quente | <Sw c="#FF8A5C"/> `#FF8A5C` |
+| success | Segurança, confirmação | <Sw c="#3CCB7F"/> `#3CCB7F` |
 
 ### Regras de uso da cor
 
+- O azul é o token `primary`, usado em toda ação principal, link e estado ativo.
+- O coral é um token próprio, `cta`, reservado ao destaque de conversão. Ele não é o `accent` do shadcn, que segue neutro e serve apenas a estados sutis como hover de menu.
 - O acento coral aparece em no máximo um elemento por tela em geral, para não competir com o azul de ação.
 - Cor nunca é o único meio de transmitir informação. Segurança de um local, por exemplo, usa cor mais ícone e rótulo, atendendo à acessibilidade.
 - Contraste segue a régua do WCAG descrita na seção de acessibilidade.
@@ -94,21 +111,26 @@ Escala base, seguindo o padrão de tamanhos pequenos e confiantes dos apps de vi
 - Raio de canto: 8px em botões e inputs, 12px em cards. Transmite acolhimento sem exagero.
 - Elevação por sombra suave, usada só onde há hierarquia real, para não pesar a tela.
 
-Os tokens vivem no `globals.css` do frontend, dentro do bloco `@theme` do Tailwind v4, que é como o shadcn/ui organiza o tema. Exemplo do formato:
+Os tokens vivem no `globals.css` do frontend. O shadcn/ui organiza o tema do Tailwind v4 em duas partes: os valores das cores em `:root` e `.dark`, e o mapeamento para as utilidades no bloco `@theme inline`. As cores usam OKLCH, que é o formato adotado pelo shadcn e dá transições mais uniformes. Exemplo do formato real:
 
 ```css
-@theme {
-  --color-background: #f7f8fa;
-  --color-surface: #ffffff;
-  --color-foreground: #0b2545;
-  --color-primary: #1668e3;
-  --color-accent: #ff7a45;
-  --color-success: #12b76a;
-  --radius-md: 0.75rem;
+:root {
+  --background: oklch(0.979 0.003 264.5); /* #F7F8FA */
+  --foreground: oklch(0.264 0.068 255.3); /* #0B2545 */
+  --primary: oklch(0.546 0.202 259.6); /* #1668E3 */
+  --cta: oklch(0.727 0.176 41.2); /* #FF7A45 */
+  --success: oklch(0.686 0.167 154.9); /* #12B76A */
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-cta: var(--cta);
+  --color-success: var(--success);
 }
 ```
 
-Assim, trocar uma cor da marca é mudar um token em um lugar só, e toda a interface acompanha.
+Assim, trocar uma cor da marca é mudar um token em um lugar só, e toda a interface acompanha. A conversão de hex para OKLCH é feita por script no momento de definir a paleta.
 
 ## Padrões de layout
 
