@@ -95,6 +95,39 @@ Uso previsto no Triplaner:
 
 A integração no React será feita por um wrapper compatível com MapLibre, mantendo o componente de mapa isolado na pasta de domínio. Como toda dependência nova, a biblioteca passa antes por checagem de vulnerabilidades e aprovação.
 
+## Especificação dos componentes para o design system
+
+Esta é a especificação que guia a construção da biblioteca no Figma, a partir dos componentes em código. Cada componente vira um `COMPONENT` com propriedades, ligado aos tokens, e as telas usam apenas instâncias.
+
+Estado do build: `Button` pronto no Figma (18 variantes, Variant x Size, com propriedade de texto `Label`). Faltam `Input`, `Badge` e `Card`.
+
+### Button
+
+- Propriedade Variant: Primary, CTA, Secondary, Outline, Ghost, Destructive.
+- Propriedade Size: SM (36), MD (40), LG (48).
+- Propriedade de texto: `Label`.
+- Tokens: fundo e texto por variante (Primary usa `primary`/`primary-foreground`, CTA usa `cta`/`cta-foreground`, Destructive usa `destructive`), raio `radius/md`, padding horizontal por `spacing`.
+
+### Input
+
+- Propriedade State: Default, Focus, Disabled, Error.
+- Estrutura: auto-layout horizontal, altura 40, raio `radius/md`, padding horizontal `spacing/md`, borda 1.
+- Tokens: fundo `background`, texto `foreground`, placeholder `muted-foreground`, borda `input`. Focus troca a borda para `ring`, Error para `destructive`, Disabled aplica opacidade reduzida.
+- Propriedade de texto: `Placeholder`.
+
+### Badge
+
+- Propriedade Variant: Default (primary), Secondary, CTA, Success, Warning, Destructive, Outline.
+- Pílula: altura 20, raio `radius/full`, padding horizontal `spacing/sm`, texto 12 Medium.
+- Tokens por variante: par de fundo e texto. Success, Warning e Destructive usam fundo tênue da própria cor com texto na cor cheia; Outline usa borda `border` e texto `foreground`.
+- Propriedade de texto: `Label`.
+
+### Card
+
+- Slot container: fundo `card`, borda `border`, raio `radius/lg`, padding `spacing/xl`, gap `spacing/lg`, sombra suave.
+- Subestrutura: Header com Title (`Heading/Subsection`) e Description (`Body/Small` em `muted-foreground`), e uma área de conteúdo.
+- Propriedades de texto: `Title` e `Description`.
+
 ## Fontes desta pesquisa
 
 - [shadcn/ui com Tailwind v4](https://ui.shadcn.com/docs/tailwind-v4)
