@@ -138,6 +138,16 @@ Os tokens vivem no `globals.css` do frontend. O shadcn/ui organiza o tema do Tai
 
 Assim, trocar uma cor da marca é mudar um token em um lugar só, e toda a interface acompanha. A conversão de hex para OKLCH é feita por script no momento de definir a paleta.
 
+## Design System no Figma
+
+O design system vive também no Figma, gerado a partir dos tokens do `globals.css`, para servir de referência visual e base das telas.
+
+- Arquivo (apenas visualização): [Triplaner Design System](https://www.figma.com/design/ZMXbW1jw3ALmHNShxcGtps/Triplaner-Design-System)
+
+O arquivo contém três páginas: Foundations (grids de cor Light e Dark, tipografia e escalas de espaçamento e raio, todos ligados a variáveis), Components (biblioteca de componentes) e Screens (telas do MVP). Os componentes são reaproveitados por instância, nunca redesenhados.
+
+Duas notas de plano: o Figma Starter limita a um modo por coleção, então o tema escuro fica numa coleção paralela `Color Dark` em vez de um modo Dark na coleção `Color`; e a construção da biblioteca respeita o limite de chamadas do plano, sendo feita em etapas.
+
 ## Padrões de layout
 
 - Barra de busca dominante no topo da home, como nos players de referência.
