@@ -45,14 +45,14 @@ O backend destas telas já existe, descrito na seção de Autenticação.
 
 ## Criação de roteiro
 
-Este é o fluxo central do produto.
+Este é o fluxo central do produto. Os campos de cada tela derivam da seção Referência de Roteiro Manual, que lista o que um roteiro real precisa conter, incluindo deslocamento entre cidades, pedágio, metadados da atração e as anotações do dia.
 
 | Código | Tela | Descrição | Prioridade |
 | --- | --- | --- | --- |
 | T08 | Filtros do roteiro | Meio de locomoção, tipo de atividade, datas e destino | MVP |
 | T09 | Tempo e pausas | Janelas de diversão, pausas, horário de retorno e margem de erro | MVP |
 | T10 | Geração do roteiro | Estado de progresso enquanto o roteiro é montado | MVP |
-| T11 | Roteiro em linha do tempo | O dia como blocos de atividade, pausa e deslocamento | MVP |
+| T11 | Roteiro em linha do tempo | O dia como blocos de atividade, pausa e deslocamento, com anotações do dia | MVP |
 | T12 | Roteiro no mapa | Mapa interativo para explorar os pontos e a rota do dia | MVP |
 | T13 | Detalhe do ponto | Informações de um local do roteiro, com dados de segurança | MVP |
 | T14 | Edição do roteiro | Reordenar, remover e ajustar pontos e horários | Fase 2 |
