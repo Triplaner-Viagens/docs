@@ -144,14 +144,6 @@ A referência principal do design system é viva, em código, na rota `/design-s
 
 A página cobre cores (pares semânticos, marca e status, linhas e foco), tipografia, escala de raios, os componentes de UI (Button, Badge, Input, Card) e os componentes de roteiro (Stepper, ChipGroup, SegurancaBadge, CartaoDeRoteiro, EmptyState).
 
-### Referência no Figma
-
-O Figma serve como referência visual secundária, gerada a partir dos mesmos tokens do `globals.css`.
-
-- Arquivo (apenas visualização): [Triplaner Design System](https://www.figma.com/design/ZMXbW1jw3ALmHNShxcGtps/Triplaner-Design-System)
-
-O plano Figma Starter limita o servidor a 20 chamadas por mês, o que inviabiliza iterar a biblioteca por lá. Por isso o design system passou a ser mantido em código, e o arquivo do Figma cobre apenas as fundações e o primeiro componente. Quando construído, o tema escuro fica numa coleção paralela `Color Dark` (o Starter permite só um modo por coleção) e os componentes são reaproveitados por instância, nunca redesenhados.
-
 ## Padrões de layout
 
 - Barra de busca dominante no topo da home, como nos players de referência.

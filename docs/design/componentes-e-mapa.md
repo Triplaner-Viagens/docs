@@ -97,9 +97,9 @@ A integração no React será feita por um wrapper compatível com MapLibre, man
 
 ## Especificação dos componentes para o design system
 
-Esta é a especificação que guia a construção da biblioteca no Figma, a partir dos componentes em código. Cada componente vira um `COMPONENT` com propriedades, ligado aos tokens, e as telas usam apenas instâncias.
+Esta é a especificação dos componentes do design system, mantida em código. Cada componente define suas variantes, estados e tokens, e as telas o reaproveitam por composição, nunca reescrevendo o estilo.
 
-Estado do build: `Button` pronto no Figma (18 variantes, Variant x Size, com propriedade de texto `Label`). Faltam `Input`, `Badge` e `Card`.
+Todos estão implementados e visíveis na página `/design-system` do frontend, que renderiza os componentes reais com suas variantes. Essa página é exclusiva de desenvolvimento e não fica exposta na publicação do site.
 
 ### Button
 

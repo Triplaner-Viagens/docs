@@ -5,7 +5,7 @@ title: Fluxo de Telas
 
 # Fluxo de Telas do MVP
 
-Este documento conecta as 16 telas do MVP em uma jornada, o que a lista do Mapa de Telas não mostra. Ele existe por dois motivos: fechar quais telas e estados precisam ser desenhados antes de qualquer pixel, e servir de briefing para gerar o design system e as telas no Figma.
+Este documento conecta as 16 telas do MVP em uma jornada, o que a lista do Mapa de Telas não mostra. Ele existe por dois motivos: fechar quais telas e estados precisam ser desenhados antes de qualquer pixel, e servir de briefing para construir o design system e as telas em código.
 
 As telas seguem a numeração do [Mapa de Telas](./mapa-de-telas.md). O escopo aqui é apenas o MVP: T01, T02, T05, T06, T08 a T13, T15, T18, T20 e as telas de sistema T23, T24 e T25.
 
@@ -99,4 +99,4 @@ Cada linha é o briefing de uma tela: o objetivo, os estados a desenhar e para o
 - **Vermelho**: telas de sistema e falha, na cor de marca `cta`, com traço em `wine`.
 - Setas de mão dupla indicam alternância sem perda de contexto, como linha do tempo e mapa.
 
-Este fluxo é a base do próximo passo: gerar no Figma o design system a partir dos tokens do frontend e, sobre ele, cada uma destas telas com seus estados.
+Este fluxo é a base do próximo passo: construir em código o design system a partir dos tokens do frontend e, sobre ele, cada uma destas telas com seus estados.
