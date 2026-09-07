@@ -138,15 +138,19 @@ Os tokens vivem no `globals.css` do frontend. O shadcn/ui organiza o tema do Tai
 
 Assim, trocar uma cor da marca é mudar um token em um lugar só, e toda a interface acompanha. A conversão de hex para OKLCH é feita por script no momento de definir a paleta.
 
-## Design System no Figma
+## Design System
 
-O design system vive também no Figma, gerado a partir dos tokens do `globals.css`, para servir de referência visual e base das telas.
+A referência principal do design system é viva, em código, na rota `/design-system` do frontend. Ela renderiza os tokens e todos os componentes reais com suas variantes e estados, então nunca sai de sincronia com o que roda de fato. A página é exclusiva de desenvolvimento: um layout server devolve 404 em produção, então ela não fica exposta na publicação do site.
+
+A página cobre cores (pares semânticos, marca e status, linhas e foco), tipografia, escala de raios, os componentes de UI (Button, Badge, Input, Card) e os componentes de roteiro (Stepper, ChipGroup, SegurancaBadge, CartaoDeRoteiro, EmptyState).
+
+### Referência no Figma
+
+O Figma serve como referência visual secundária, gerada a partir dos mesmos tokens do `globals.css`.
 
 - Arquivo (apenas visualização): [Triplaner Design System](https://www.figma.com/design/ZMXbW1jw3ALmHNShxcGtps/Triplaner-Design-System)
 
-O arquivo contém três páginas: Foundations (grids de cor Light e Dark, tipografia e escalas de espaçamento e raio, todos ligados a variáveis), Components (biblioteca de componentes) e Screens (telas do MVP). Os componentes são reaproveitados por instância, nunca redesenhados.
-
-Duas notas de plano: o Figma Starter limita a um modo por coleção, então o tema escuro fica numa coleção paralela `Color Dark` em vez de um modo Dark na coleção `Color`; e a construção da biblioteca respeita o limite de chamadas do plano, sendo feita em etapas.
+O plano Figma Starter limita o servidor a 20 chamadas por mês, o que inviabiliza iterar a biblioteca por lá. Por isso o design system passou a ser mantido em código, e o arquivo do Figma cobre apenas as fundações e o primeiro componente. Quando construído, o tema escuro fica numa coleção paralela `Color Dark` (o Starter permite só um modo por coleção) e os componentes são reaproveitados por instância, nunca redesenhados.
 
 ## Padrões de layout
 
