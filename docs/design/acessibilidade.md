@@ -54,6 +54,19 @@ Critérios novos do WCAG 2.2 que seguimos:
 - `prefers-reduced-motion` desliga animações não essenciais.
 - Nenhum conteúdo pisca de forma que possa causar desconforto ou risco.
 
+## Estado da implementação no frontend
+
+O checklist acima está implementado no frontend:
+
+- Foco visível: regra global de `:focus-visible` em `globals.css` desenha um contorno de 2px na cor `--ring` com deslocamento, aplicado a todo elemento focável, incluindo os links da navbar. O cabeçalho do app não se esconde enquanto um elemento interno tem foco (`focus-within`), então o foco nunca fica coberto pela barra fixa.
+- Link de pular: o primeiro elemento focável da página é o link "Pular para o conteúdo", que salta para o `#conteudo-principal`, o `<main>` de cada layout e das páginas de topo.
+- Alto contraste: além dos temas claro e escuro há o tema `.contrast`, escolhível no seletor de tema. O CSS também honra `prefers-contrast: more` e `forced-colors` do sistema.
+- Contraste dos tokens: `cta`, `success`, `warning`, `destructive` e a borda de `input` foram calibrados por cálculo de contraste WCAG para atingir 4.5:1 em texto e 3:1 em componentes, nos três temas.
+- Navbar: o cabeçalho usa layout flexível com altura mínima em vez de fixa, então não quebra em zoom de 200% nem no reflow até 400%.
+- Formulários: cada campo tem `label` associado, erros usam `aria-invalid` e `aria-describedby` ligados ao campo, e o envio com erro leva o foco ao primeiro campo inválido.
+- Movimento: `prefers-reduced-motion` desliga transições e animações de forma global e desativa o scroll suave.
+- Regiões vivas: a geração do roteiro é anunciada por `aria-live`, e o aviso de conexão usa `role="status"`.
+
 ## Como verificamos
 
 - Checagem automática com eslint de acessibilidade e auditoria no navegador durante o desenvolvimento.

@@ -56,14 +56,17 @@ As cores são organizadas por papel, não por matiz. Cada cor tem uma função, 
 | foreground | Texto principal | <Sw c="#0B2545"/> `#0B2545` |
 | muted-foreground | Texto secundário | <Sw c="#5A6B85"/> `#5A6B85` |
 | border | Bordas e divisórias | <Sw c="#E3E8EF"/> `#E3E8EF` |
+| input | Borda de campo de formulário | <Sw c="#8B9096"/> `#8B9096` |
 | primary | Ação principal, links, estado ativo | <Sw c="#1668E3"/> `#1668E3` |
 | primary-foreground | Texto sobre primary | <Sw c="#FFFFFF"/> `#FFFFFF` |
-| cta | Cor de marca, CTA de conversão | <Sw c="#FF385C"/> `#FF385C` |
+| cta | Cor de marca, CTA de conversão | <Sw c="#E61048"/> `#E61048` |
 | cta-foreground | Texto sobre cta | <Sw c="#FFFFFF"/> `#FFFFFF` |
 | wine | Acento em gradientes e destaques gráficos | <Sw c="#92174D"/> `#92174D` |
-| success | Segurança, confirmação, avaliação positiva | <Sw c="#12B76A"/> `#12B76A` |
-| warning | Atenção, área a evitar com ressalva | <Sw c="#F79009"/> `#F79009` |
-| destructive | Erro, ação irreversível | <Sw c="#E5484D"/> `#E5484D` |
+| success | Segurança, confirmação, avaliação positiva | <Sw c="#008339"/> `#008339` |
+| warning | Atenção, área a evitar com ressalva | <Sw c="#B75500"/> `#B75500` |
+| destructive | Erro, ação irreversível | <Sw c="#D1343D"/> `#D1343D` |
+
+Os tokens `cta`, `success`, `warning`, `destructive` e a borda de `input` foram calibrados para atingir o contraste mínimo do WCAG 2.2 AA descrito na seção de acessibilidade: 4.5:1 para texto (incluindo texto branco sobre `cta` e texto colorido de status sobre fundo claro) e 3:1 para a borda de campos. A cor de marca segue a família do vermelho Rausch do Airbnb, um degrau mais escura para permitir texto legível sobre ela. No tema escuro o `cta` permanece vívido e o texto sobre ele passa a ser escuro (`cta-foreground` <Sw c="#0A111F"/> `#0A111F`), mantendo o mesmo resultado de contraste.
 
 ### Tema escuro
 
@@ -122,9 +125,9 @@ Os tokens vivem no `globals.css` do frontend. O shadcn/ui organiza o tema do Tai
   --background: oklch(0.979 0.003 264.5); /* #F7F8FA */
   --foreground: oklch(0.264 0.068 255.3); /* #0B2545 */
   --primary: oklch(0.546 0.202 259.6); /* #1668E3 */
-  --cta: oklch(0.658 0.231 17.1); /* #FF385C */
+  --cta: oklch(0.59 0.231 17.1); /* #E61048 */
   --wine: oklch(0.438 0.161 0.8); /* #92174D */
-  --success: oklch(0.686 0.167 154.9); /* #12B76A */
+  --success: oklch(0.52 0.167 154.9); /* #008339 */
   --radius: 0.75rem;
 }
 
@@ -138,11 +141,13 @@ Os tokens vivem no `globals.css` do frontend. O shadcn/ui organiza o tema do Tai
 
 Assim, trocar uma cor da marca é mudar um token em um lugar só, e toda a interface acompanha. A conversão de hex para OKLCH é feita por script no momento de definir a paleta.
 
+Além de `:root` e `.dark`, há um terceiro conjunto de tokens em `.contrast`, o tema de alto contraste. Ele reforça texto, bordas e cores de ação para o máximo de legibilidade e é escolhido pelo usuário no seletor de tema. O `globals.css` também honra as preferências do sistema `prefers-contrast: more` e `forced-colors`, então quem já usa alto contraste no sistema operacional recebe o reforço sem precisar configurar nada.
+
 ## Design System
 
 A referência principal do design system é viva, em código, na rota `/design-system` do frontend. Ela renderiza os tokens e todos os componentes reais com suas variantes e estados, então nunca sai de sincronia com o que roda de fato. A página é exclusiva de desenvolvimento: um layout server devolve 404 em produção, então ela não fica exposta na publicação do site.
 
-A página cobre cores (pares semânticos, marca e status, linhas e foco), tipografia, escala de raios, os componentes de UI (Button, Badge, Input, Card) e os componentes de roteiro (Stepper, ChipGroup, SegurancaBadge, CartaoDeRoteiro, EmptyState).
+A página cobre cores (pares semânticos, marca e status, linhas e foco), tipografia, escala de raios, os componentes de UI (Button, Badge, Input, Card) e os componentes de roteiro (Stepper, ChipGroup, SafetyBadge, ItineraryCard, EmptyState). O seletor de tema no topo da página permite conferir claro, escuro e alto contraste.
 
 ## Padrões de layout
 
