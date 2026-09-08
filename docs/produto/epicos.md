@@ -9,12 +9,33 @@ Este documento reúne os épicos do Triplaner, entendidos como grandes blocos de
 funcionalidade que a aplicação deve oferecer. Cada épico descreve o objetivo e
 as funcionalidades que o compõem, sem detalhar tarefas de implementação.
 
-Os números servem apenas como referência. Ainda não há priorização entre os
-épicos: a ordem aqui não indica sequência de desenvolvimento nem importância
-relativa. A priorização será feita em um momento posterior.
+Os números servem apenas como referência e não indicam sequência de
+desenvolvimento. A prioridade de cada épico está na tabela MoSCoW abaixo.
 
 Para o contexto de negócio, ver [Visão do Produto](./visao-do-produto.md). Para
 as regras que orientam a geração, ver [Regras de negócio](./regras-de-negocio.md).
+
+## Priorização (MoSCoW)
+
+O critério combina o laço central do MVP (primeiro manual, depois automático), o
+que já está construído e o custo de dependências externas.
+
+| Épico | Prioridade | Situação | Justificativa |
+| --- | --- | --- | --- |
+| 1 Contas e autenticação | Must | Construído | Base de acesso de todo o produto |
+| 3 Definição de filtros do roteiro | Must | Construído | Entrada da geração |
+| 4 Geração automática de roteiro | Must | Construído | Coração do produto |
+| 5 Gestão de roteiros | Must | Construído | Sem edição o roteiro não se sustenta |
+| 13 Perfil e conta | Must (mínimo) | Mock | Ver dados da conta e encerrar sessão são básicos |
+| 2 Descoberta de destinos | Should | Mock | Porta de entrada, backend simples |
+| 6 Detalhe de ponto de interesse | Should | Parcial | Depende do modelo relacional do roteiro |
+| 7 Visualização em mapa | Should | Tela | Alto valor visual sobre dados existentes |
+| 10 Compartilhamento de roteiro | Should | Endpoint inicial | Fase A por impressão e link é barata |
+| 12 Preferências de viagem | Should | Mock | Alimenta a geração de novos roteiros |
+| 8 Módulo de segurança | Could | Não iniciado | Diferencial de produto, mas depende de fonte externa incerta |
+| 9 Integração de hospedagem | Could | Mock | Depende de fonte externa; Fase A pode ser manual |
+| 14 Configurações e notificações | Could | Mock | Exige infraestrutura de envio de email e push |
+| 11 Assistente virtual | Won't (agora) | Não iniciado | Diferencial premium previsto para fase posterior |
 
 ## Épico 1: Contas e autenticação
 

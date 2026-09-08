@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 5
 title: Plano de Implementação
 ---
 
@@ -25,7 +25,7 @@ Assim, cada campo nasce editável à mão, exatamente como o casal fazia, e a au
 
 ## Modelo de dados
 
-Hoje o backend só tem o modelo `User`. Estas frentes introduzem a estrutura de viagem. A proposta em Prisma, resumida nos modelos centrais:
+Hoje o backend tem os modelos `User` e `Itinerary`, e o roteiro é guardado como um documento único no campo `data` do `Itinerary`. Estas frentes trocam esse documento único por uma estrutura de viagem relacional e editável. A proposta em Prisma, resumida nos modelos centrais:
 
 ```prisma
 model Trip {

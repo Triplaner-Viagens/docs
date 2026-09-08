@@ -12,15 +12,17 @@ Hoje, planejar uma viagem exige abrir dezenas de abas: passagens em um site, hos
 
 ## O que esta documentação cobre
 
-Esta é a documentação inicial do projeto, com foco na visão de produto e na base arquitetural. Ela está organizada em quatro frentes:
+Esta documentação cobre a visão de produto, o design, a base arquitetural e as práticas de engenharia. Ela está organizada em seis áreas:
 
 - **Visão Geral**: o problema que resolvemos, a oportunidade de mercado e os objetivos do produto.
-- **Produto**: a visão detalhada da solução, suas características e as personas atendidas.
-- **Arquitetura**: a visão arquitetural, o stack tecnológico e a estrutura do repositório.
-- **Engenharia**: a metodologia de trabalho adotada pela equipe.
+- **Produto**: a visão da solução, os épicos, as regras de negócio, o plano de implementação, as personas e as referências de apoio.
+- **Design**: a identidade visual, os princípios de UX, a acessibilidade e o mapa de telas.
+- **Arquitetura**: a visão arquitetural, o stack tecnológico, a estrutura do repositório e a arquitetura do frontend.
+- **Engenharia**: a metodologia de trabalho e as práticas de engenharia da equipe.
+- **Equipe**: as pessoas por trás do projeto.
 
 ## Estado atual
 
-O projeto está em fase de concepção e estruturação inicial. Os repositórios de frontend, backend e documentação já foram criados e configurados, e o próximo passo é evoluir do conceito para um MVP focado na geração manual de roteiros.
+O laço central do MVP já funciona de ponta a ponta: contas e autenticação, filtros do roteiro, geração automática e gestão dos roteiros. O roteiro é hoje armazenado como um documento único, e o próximo passo é aprofundar o modelo de dados da viagem, conforme o [Plano de Implementação](./produto/plano-de-implementacao.md).
 
 Para conhecer as pessoas por trás do projeto, veja a página [Colaboradores](./equipe/colaboradores.md).

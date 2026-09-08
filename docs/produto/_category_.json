@@ -3,6 +3,6 @@
   "position": 3,
   "link": {
     "type": "generated-index",
-    "description": "A visão detalhada da solução, suas características e as personas atendidas."
+    "description": "A visão da solução, os épicos, as regras de negócio, o plano de implementação, as personas e as referências que orientam o produto."
   }
 }
