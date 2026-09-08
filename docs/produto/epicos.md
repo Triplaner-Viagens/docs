@@ -134,5 +134,3 @@ Dar controle sobre como o produto se comunica.
 - Notificações por email.
 - Notificações push.
 - Resumo semanal.
-</content>
-</invoke>
