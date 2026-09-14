@@ -46,7 +46,7 @@ Preparado, ainda não aplicado. A aplicação é uma operação sensível e depe
 - Migração Prisma `rename_to_english`: `ALTER TABLE` renomeando `Roteiro` para `Itinerary`, as colunas (`destino`, `periodo`, `resumo`, `dados`, `salvo` para `destination`, `period`, `summary`, `data`, `saved`), as constraints e o índice. Renomear preserva os dados.
 - Script `scripts/migrate-itinerary-data.ts`: transforma, de forma idempotente, as chaves e valores internos em português do campo JSON das linhas já salvas, para continuarem legíveis com os novos tipos.
 
-O serviço do backend no Render não roda `prisma migrate deploy` no boot, então a migração é aplicada manualmente com `npx prisma migrate deploy`, seguida do script de transformação do JSON.
+Na época, o serviço do backend no Render não rodava `prisma migrate deploy` no boot, então a migração foi aplicada manualmente, seguida do script de transformação do JSON. Hoje o `npm run start:prod` aplica as migrations automaticamente (ver [Desenvolvimento e CI/CD](./desenvolvimento-e-ci-cd.md)); scripts de transformação de dados continuam manuais.
 
 ## Pendências
 

@@ -120,12 +120,17 @@ Segredos entram só em runtime, nunca embutidos na imagem ou no `Dockerfile`.
 ## Banco de dados e migrations
 
 O banco fica fora da imagem do app: código é descartável a cada deploy, dados
-precisam sobreviver. Por isso a migration é um passo único e ordenado, e não roda
-no boot do container, o que evitaria corrida entre réplicas.
+precisam sobreviver. As migrations rodam no boot, antes da API atender tráfego:
+`npm run start:prod` executa `prisma migrate deploy && node dist/main`. O Prisma
+usa um advisory lock no Postgres, então réplicas subindo juntas não correm entre si.
 
 - Desenvolvimento local: `npm run prisma:migrate` cria e aplica migrations.
-- Container: o serviço `migrate` roda `npx prisma migrate deploy` antes do backend subir.
-- Produção: o Render aplica as migrations pelo `preDeployCommand` do `render.yaml`.
+- Container: o `CMD` do Dockerfile é `npm run start:prod`; o serviço `migrate` do
+  compose continua aplicando antes, e o boot vira no-op.
+- Produção: o Render (Node service, plano free, sem pre-deploy) usa
+  `npm run start:prod` como start command. Se a migration falhar, o processo não
+  sobe e o Render mantém a versão anterior no ar.
+- Migrations precisam ser aditivas/compatíveis com a versão anterior do código.
 
 ## Testes e qualidade
 
