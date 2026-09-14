@@ -12,12 +12,13 @@ Hoje, planejar uma viagem exige abrir dezenas de abas: passagens em um site, hos
 
 ## O que esta documentação cobre
 
-Esta documentação cobre a visão de produto, o design, a base arquitetural e as práticas de engenharia. Ela está organizada em seis áreas:
+Esta documentação cobre a visão de produto, o design, a base arquitetural e as práticas de engenharia. Ela está organizada em sete áreas:
 
 - **Visão Geral**: o problema que resolvemos, a oportunidade de mercado e os objetivos do produto.
 - **Produto**: a visão da solução, os épicos, as regras de negócio, o plano de implementação, as personas e as referências de apoio.
 - **Design**: a identidade visual, os princípios de UX, a acessibilidade e o mapa de telas.
 - **Arquitetura**: a visão arquitetural, o stack tecnológico, a estrutura do repositório e a arquitetura do frontend.
+- **Review Intelligence**: o serviço que descobre o que visitar em cada cidade e transforma reviews públicas em scores por critério.
 - **Engenharia**: a metodologia de trabalho e as práticas de engenharia da equipe.
 - **Equipe**: as pessoas por trás do projeto.
 
