@@ -95,9 +95,33 @@ cd frontend
 docker compose up --build
 ```
 
-Sobe a interface em `3000:3000`. Como os repositórios são separados, tenha o
-backend no ar antes (por npm ou pelo Compose do backend). O navegador alcança a
-API por `http://localhost:3333`.
+Sobe apenas a interface em `3000:3000`. Como os repositórios são separados,
+tenha o backend no ar antes (por npm ou pelo Compose do backend). O navegador
+alcança a API por `http://localhost:3333`.
+
+### Stack completa a partir do frontend
+
+Para testar o app de ponta a ponta sem subir o backend à parte, o frontend traz
+um compose que levanta Postgres, backend e frontend de uma vez:
+
+```bash
+cd frontend
+docker compose -f docker-compose.fullstack.yml up --build
+```
+
+Sobe `db` (Postgres em `5433:5432`), `migrate` (aplica as migrations e encerra),
+`backend` (API em `3333:3333`) e `frontend` (interface em `3000:3000`), todos
+com hot reload. O backend vive em outro repositório, ao lado deste; o compose o
+alcança por `../backend`. Se o seu layout for diferente, aponte o caminho:
+
+```bash
+BACKEND_CONTEXT=/caminho/para/backend \
+  docker compose -f docker-compose.fullstack.yml up --build
+```
+
+Rode este ou o Compose do backend, não os dois juntos: ambos usam as portas
+`5433` e `3333`. O webscraper não entra nesta stack; sem ele, o recomendador do
+backend cai no fallback determinístico.
 
 ### Produção, validação local
 
